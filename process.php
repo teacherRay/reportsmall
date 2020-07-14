@@ -10,36 +10,38 @@ $name = '';
 $classroom = '';
 $classtime = '';
 $pacomment = '';
-// $pbcomment = '';
+$pbcomment = '';
 
 
 
-if (isset($_POST['save'])){
-    $name = $_POST['name'];
-    $classroom = $_POST['classroom'];
-    $classtime = $_POST['classtime'];
+// if (isset($_POST['save'])){
+//     $name = $_POST['name'];
+//     $classroom = $_POST['classroom'];
+//     $classtime = $_POST['classtime'];
 
-    $pacomment = $_POST['pacomment'];
-    $pbcomment = $_POST['pbcomment'];
+//     $pacomment = $_POST['pacomment'];
+//     $pbcomment = $_POST['pbcomment'];
        
-    $mysqli->query("INSERT INTO data (name, pacomment, pbcomment ) VALUES  ('$name, '$pacomment', '$pbcomment')") or die($mysqli->error);
+//     $mysqli->query("INSERT INTO data (name, pacomment, pbcomment ) VALUES  ('$name, '$pacomment', '$pbcomment')") or die($mysqli->error);
     
-    $_SESSION['message'] = "Record has been saved!";
-    $_SESSION['msg_type'] = "success";
+//     $_SESSION['message'] = "Record has been saved!";
+//     $_SESSION['msg_type'] = "success";
     
-    header("location: index.php");
+//     header("location: index.php");
     
-}
 
-if (isset($_GET['delete'])){
-    $id = $_GET['delete'];
-    $mysqli->query("DELETE FROM data WHERE id=$id") or die($mysqli->error());
+
+// if (isset($_GET['delete'])){
+//     $id = $_GET['delete'];
+//     $mysqli->query("DELETE FROM data WHERE id=$id") or die($mysqli->error());
     
-    $_SESSION['message'] = "Record has been deleted!";
-    $_SESSION['msg_type'] = "danger";
+//     $_SESSION['message'] = "Record has been deleted!";
+//     $_SESSION['msg_type'] = "danger";
     
-    header("location: index.php");
-}
+//     header("location: index.php");
+// }
+
+// Get the data to the form with the edit button
 
 if (isset($_GET['edit'])){
     $id = $_GET['edit'];
@@ -57,9 +59,7 @@ if (isset($_GET['edit'])){
 
 if (isset($_POST['update'])){
     $id = $_POST['id'];
-    $pacomment = $_POST['pacomment'];
-    // $pbcomment = $_POST['pbcomment'];
-   
+    $pacomment = $_POST['pacomment'];   
     $mysqli->query("UPDATE data SET pacomment= '$pacomment' WHERE id=$id") or die($mysqli->error);
     
     $_SESSION['message'] = "Record has been updated!";
