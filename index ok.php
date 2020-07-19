@@ -46,8 +46,8 @@
     
         <!-- <div class="container">
         <?php
-            $mysqli = new mysqli("localhost","ray","password","reports")or die(mysqli_error($mysqli));
-            $result = $mysqli->query("SELECT * FROM data WHERE classroom = '101i'AND classtime = 'am'") or die($mysqli->error);
+            $mysqli = new mysqli("localhost","ray","password","crud") or die(mysqli_error($mysqli));
+            $result = $mysqli->query("SELECT * FROM data WHERE classroom = '104i'AND classtime = 'am'") or die($mysqli->error);
              // Print $result to see if it holds data
             // pre_r($result); 
            

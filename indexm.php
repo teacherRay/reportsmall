@@ -29,7 +29,7 @@
         <?php endif ?>
         <!-- <div class="container"> -->
         <?php
-            $mysqli = new mysqli("localhost","ray","password","crud") or die(mysqli_error($mysqli));
+            $mysqli = new mysqli("localhost","ray","password","reports") or die(mysqli_error($mysqli));
             $result = $mysqli->query("SELECT * FROM data") or die($mysqli->error);
            
             ?>
@@ -104,7 +104,7 @@
             </form>
             </tr>      
 
-            <tr>
+            <!-- <tr>
             <form action="/action_page.php">
             <label for="pbcomment">PB Comment:</label>
             <select id="pbcomment" name="pbcomment">
@@ -126,9 +126,9 @@
                 <option value=15><?php echo $name; ?> has struggled to complete the required amount of work.</option>            
             </select>
             </form>
-            </tr>      
+            </tr>       -->
           
-            <tr>
+            <!-- <tr>
             <form action="/action_page.php">
             <label for="pccomment">PC Comment:</label>
             <select id="pccomment" name="pccomment">
@@ -150,7 +150,7 @@
                 <option value=15><?php echo $name; ?> has struggled to complete the required amount of work.</option>            
             </select>
             </form>
-            </tr>      
+            </tr>       -->
             </table>
 
           

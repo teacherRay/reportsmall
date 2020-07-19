@@ -2,15 +2,15 @@
 
 session_start();
 
-$mysqli = new mysqli("localhost","ray","password","reports") or die(mysqli_error($mysqli));
+$mysqli = new mysqli("localhost","ray","password","crud") or die(mysqli_error($mysqli));
 
 $id = 0;
 $update = false;
 $name = '';
 $classroom = '';
 $classtime = '';
-// $pacomment = '';
-// $pbcomment = '';
+$pacomment = '';
+$pbcomment = '';
 
 
 
@@ -53,7 +53,7 @@ if (isset($_GET['edit'])){
         $classroom = $row['classroom'];
         $classtime = $row['classtime'];
         $pacomment = $row['pacomment'];
-           
+        $pbcomment = $row['pbcomment'];      
     }
 }
 
