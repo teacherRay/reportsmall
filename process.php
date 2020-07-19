@@ -14,21 +14,6 @@ $classtime = '';
 
 
 
-// if (isset($_POST['save'])){
-//     $name = $_POST['name'];
-//     $classroom = $_POST['classroom'];
-//     $classtime = $_POST['classtime'];
-
-//     $pacomment = $_POST['pacomment'];
-//     $pbcomment = $_POST['pbcomment'];
-       
-//     $mysqli->query("INSERT INTO data (name, pacomment, pbcomment ) VALUES  ('$name, '$pacomment', '$pbcomment')") or die($mysqli->error);
-    
-//     $_SESSION['message'] = "Record has been saved!";
-//     $_SESSION['msg_type'] = "success";
-    
-//     header("location: index.php");
-    
 
 
 // if (isset($_GET['delete'])){
