@@ -92,13 +92,14 @@
                 <option value='has made little progress.'><?php echo $name; ?> has made little progress.</option>
                 <option value='has struggled to complete the required amount of work.'><?php echo $name; ?> has struggled to complete the required amount of work.</option> 
             </select>  
+
             <div class="form-group">
             <?php 
             if ($update == true): 
             ?>
                 <button type="submit" class="btn btn-info" name="update">Update</button>
             <?php else: ?>
-                <button type="submit" class="btn btn-primary" name="save">Save</button>
+                <!-- <button type="submit" class="btn btn-primary" name="save">Save</button> -->
             <?php endif; ?>
             </div>
         </form>
@@ -109,8 +110,8 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Classroom</th>
-                            <th>Classtime</th>
+                            <!-- <th>Classroom</th>
+                            <th>Classtime</th> -->
                             <th colspan="3">Action</th>
                         </tr>
                     </thead>
@@ -124,8 +125,8 @@
     <!-- ************************************** Put data into Classlist table rows ******************************************   -->
                     <tr>
                         <td><?php echo $row['name']; ?></td>
-                        <td><?php echo $row['classroom']; ?></td>
-                        <td><?php echo $row['classtime']; ?></td>
+                        <!-- <td><?php echo $row['classroom']; ?></td>
+                        <td><?php echo $row['classtime']; ?></td> -->
 
     <!-- **************************************  Setup Edit Button and put in last table column ******************************************   -->
                         <td>

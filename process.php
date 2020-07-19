@@ -9,24 +9,6 @@ $update = false;
 $name = '';
 $classroom = '';
 $classtime = '';
-// $pacomment = '';
-// $pbcomment = '';
-
-
-
-
-
-// if (isset($_GET['delete'])){
-//     $id = $_GET['delete'];
-//     $mysqli->query("DELETE FROM data WHERE id=$id") or die($mysqli->error());
-    
-//     $_SESSION['message'] = "Record has been deleted!";
-//     $_SESSION['msg_type'] = "danger";
-    
-//     header("location: index.php");
-// }
-
-// Get the data to the form with the edit button
 
 if (isset($_GET['edit'])){
     $id = $_GET['edit'];
@@ -37,8 +19,7 @@ if (isset($_GET['edit'])){
         $name = $row['name'];
         $classroom = $row['classroom'];
         $classtime = $row['classtime'];
-        $pacomment = $row['pacomment'];
-           
+        $pacomment = $row['pacomment'];           
     }
 }
 
