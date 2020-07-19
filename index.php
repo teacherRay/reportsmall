@@ -11,6 +11,12 @@
  <!--************************************** End Setup Page Styles ************************************* -->
  <!--************************************** Setup Messages **************************************** -->
         <?php require_once 'process.php'; ?>
+
+        <?php
+$mysqli = new mysqli("localhost","ray","password","reports") or die(mysqli_error($mysqli));
+
+$resultcomment = $mysqli->query("SELECT EnglishComment FROM comments");
+?>
         
         <?php if (isset($_SESSION['message'])): ?>
             <div class="alert alert-<?=$_SESSION['msg_type']?>">
@@ -59,17 +65,25 @@
             <input type="hidden" name="id" value="<?php echo $id; ?>">
 
             <div class="form-group">
+                <h1><label><?php echo $name?></label></h1>
+            </div>
+            <div class="form-group">
+                <h3><label><?php echo $classroom ,' ' ,$classtime?></label></h3>
+            </div>
+
+
+            <!-- <div class="form-group">
                 <label>Name</label>
                 <input type="text" name="name" class="form-control" 
-                value="<?php echo $name; ?>">
+                readonly value="<?php echo $name?>">
             </div>
-            <br>
-
+            <br> -->
+<!-- 
             <div class="form-group">
                 <label>Classroom</label>
                 <input type="text" name="classroom" 
-                value="<?php echo $classroom,' ' ,$classtime; ?>" class="form-control">
-            </div>
+                readonly value="<?php echo $classroom,' ' ,$classtime; ?>" class="form-control">
+            </div> -->
 
     <div class="form-group">     
             <form action="process.php"  method="post">
