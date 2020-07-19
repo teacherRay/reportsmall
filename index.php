@@ -71,20 +71,6 @@ $resultcomment = $mysqli->query("SELECT EnglishComment FROM comments");
                 <h3><label><?php echo $classroom ,' ' ,$classtime?></label></h3>
             </div>
 
-
-            <!-- <div class="form-group">
-                <label>Name</label>
-                <input type="text" name="name" class="form-control" 
-                readonly value="<?php echo $name?>">
-            </div>
-            <br> -->
-<!-- 
-            <div class="form-group">
-                <label>Classroom</label>
-                <input type="text" name="classroom" 
-                readonly value="<?php echo $classroom,' ' ,$classtime; ?>" class="form-control">
-            </div> -->
-
     <div class="form-group">     
             <form action="process.php"  method="post">
             <label for="pacomment">PA Comment:</label>
