@@ -109,7 +109,6 @@ $resultcomment = $mysqli->query("SELECT EnglishComment FROM comments");
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Name</th>
                             <!-- <th>Classroom</th>
                             <th>Classtime</th> -->
@@ -123,22 +122,17 @@ $resultcomment = $mysqli->query("SELECT EnglishComment FROM comments");
             <?php
                 while ($row = $result->fetch_assoc()): ?>
 
-            <tr>
+    <!-- ************************************** Put data into Classlist table rows ******************************************   -->
+                    <tr>
+                        <td><?php echo $row['studentid']; ?></td>
+                        <td><?php echo $row['name'] ?></td>
+                        <td><?php echo $row['pacomment'] ?></td>
+
+    <!-- **************************************  Setup Edit Button and put in last table column ******************************************   -->
                         <td>
                             <a href="index.php?edit=<?php echo $row['id']; ?>"
                             class="btn btn-info">Edit</a>                          
                         </td>
-    <!-- ************************************** Put data into Classlist table rows ******************************************   -->
-                    
-                        <td><?php echo $row['studentid']; ?></td>
-                        <td><?php echo $row['name']." ".$row['pacomment'] ?></td>
-                        
-
-    <!-- **************************************  Setup Edit Button and put in last table column ******************************************   -->
-                        <!-- <td>
-                            <a href="index.php?edit=<?php echo $row['id']; ?>"
-                            class="btn btn-info">Edit</a>                          
-                        </td> -->
                     </tr>
                   
             <?php endwhile; ?>  <!-- ****************** End While() Loop ****************************   --> 
