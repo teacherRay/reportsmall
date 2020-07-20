@@ -1,4 +1,4 @@
-<!-- <?php require_once 'conndb.php'; ?> -->
+
 <?php require_once 'process.php'; ?>
 
  <!--************************************** Setup Messages **************************************** -->

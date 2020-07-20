@@ -1,5 +1,5 @@
-
 <?php
+
 session_start();
 
 $mysqli = new mysqli("localhost","ray","password","reports") or die(mysqli_error($mysqli));
