@@ -10,6 +10,7 @@
                 ?>
             </div>
         <?php endif ?>
+
   <!--**************************************End  Setup Messages ***********************************************  -->        
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <style>= 
+  <style>
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -54,7 +55,7 @@ body {
 </style>
 
 </head>
-<body style="background-color:powderblue;">>
+<body>
 <div class="topnav">
   <a class="active" href="#home">Home</a>
   <a href="#news">News</a>
@@ -65,7 +66,6 @@ body {
  <!--************************************** End Setup Page Styles ************************************* -->
 
  <?php $resultcomment = $mysqli->query("SELECT EnglishComment FROM comments"); ?>
-
     <!-- ************************************** Begin Connect DB  ************************************************ -->
     
         <<div class="container" align-content-center>
@@ -99,11 +99,10 @@ body {
                     while($rows = $resultcomment-> fetch_assoc())
                     {
                         $EnglishComment = $rows['EnglishComment'];
-                        echo "<option value='$name.$EnglishComment'>$name.$EnglishComment</option>";
+                        echo " <h2><option value='$EnglishComment'>$EnglishComment</option> <\h2>";
                     }
                     ?></h2> 
                 </select><br>
-                <p>
 
             <div class="form-group">
             <?php 
@@ -118,11 +117,11 @@ body {
 
     <!-- ************************************** Begin Setup Table Headers ******************************************   -->        
             <div class="row justify-content-center">
-                <table class="table" width = "20%" border = "5" cellpadding = "1";>
+                <table class="table" width = "50%" border = "1" cellpadding = "5";>
                     <thead>
                         <tr>
-                            <th><center>Action</center></th>
-                            <th><center>ID</center></th>
+                            <th>Action</th>
+                            <th>ID</th>
                             <th>Name and Comment</th>
                         </tr>
                     </thead>
@@ -135,12 +134,12 @@ body {
 
             <tr>
                         <td>
-                        <center><a href="index.php?edit=<?php echo $row['id']; ?>"
-                            class="btn btn-info">Assess</a></center>                         
+                            <a href="index.php?edit=<?php echo $row['id']; ?>"
+                            class="btn btn-info">Assess</a>                          
                         </td>
     <!-- ************************************** Put data into Classlist table rows ******************************************   -->
                     
-                        <td><center><?php echo $row['studentid']; ?></center></td>
+                        <td><?php echo $row['studentid']; ?></td>
                         <td><?php echo $row['name']." ".$row['pacomment'] ?></td>
                         
 
@@ -155,7 +154,18 @@ body {
     
                 </table> <!-- *************** End of Classlist Table  ******************************************   -->
 
-            </div> 
+            </div> <!-- ******* End  <div class="row justify-content-center">  **************************   -->
+
+    <!-- ****** Start of php Function to print $array content. '<pre>'is used to enhance readability of output">  ******   -->
+            <?php
+
+            function pre_r( $array ) {  
+                echo '<pre>'; 
+                print_r($array);
+                echo '</pre>';
+            }
+            ?>  <!-- ******* End of php Function to print $array content">  **************************   -->
+        
    
         </div>
         </div>

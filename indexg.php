@@ -10,6 +10,7 @@
                 ?>
             </div>
         <?php endif ?>
+
   <!--**************************************End  Setup Messages ***********************************************  -->        
 
 <!DOCTYPE html>
@@ -22,7 +23,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-  <style>= 
+  <style>
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -54,21 +55,37 @@ body {
 </style>
 
 </head>
-<body style="background-color:powderblue;">>
-<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-</div>
+<body><nav class="topnav navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Home of English</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">PA</a></li>
+      <li><a href="#">PB</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</nav>
 
  <!--************************************** End Setup Page Styles ************************************* -->
 
  <?php $resultcomment = $mysqli->query("SELECT EnglishComment FROM comments"); ?>
-
     <!-- ************************************** Begin Connect DB  ************************************************ -->
     
-        <<div class="container" align-content-center>
+        
         <?php
             // $mysqli = new mysqli("localhost","ray","password","reports")or die(mysqli_error($mysqli));
             $result = $mysqli->query("SELECT * FROM data WHERE classroom = '101i'AND classtime = 'am'") or die($mysqli->error);
@@ -77,7 +94,7 @@ body {
            
         ?>
     <!-- ************************************** End Connect DB ****************************************************  -->
-
+    <div class="container" align-content-center>
     <div class="row justify-content-center">
         <form action="process.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
@@ -89,21 +106,19 @@ body {
                 <h3><label><?php echo $classroom ,' ' ,$classtime?></label></h3>
             </div>
 
-
             <form action="process.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
 
             <div class="form-group">
                 <h3><label>PA Teacher's Comment</label></h3> <select name = "pacomment">
-               <?php
+                    <?php
                     while($rows = $resultcomment-> fetch_assoc())
                     {
                         $EnglishComment = $rows['EnglishComment'];
-                        echo "<option value='$name.$EnglishComment'>$name.$EnglishComment</option>";
+                        echo "<option value='$EnglishComment'>$EnglishComment</option>";
                     }
-                    ?></h2> 
+                    ?>
                 </select><br>
-                <p>
 
             <div class="form-group">
             <?php 
@@ -118,12 +133,12 @@ body {
 
     <!-- ************************************** Begin Setup Table Headers ******************************************   -->        
             <div class="row justify-content-center">
-                <table class="table" width = "20%" border = "5" cellpadding = "1";>
+                <table class="table">
                     <thead>
                         <tr>
-                            <th><center>Action</center></th>
-                            <th><center>ID</center></th>
-                            <th>Name and Comment</th>
+                            <th>Action</th>
+                            <th>ID</th>
+                            <th>Name</th>                           
                         </tr>
                     </thead>
                     
@@ -135,12 +150,12 @@ body {
 
             <tr>
                         <td>
-                        <center><a href="index.php?edit=<?php echo $row['id']; ?>"
-                            class="btn btn-info">Assess</a></center>                         
+                            <a href="index.php?edit=<?php echo $row['id']; ?>"
+                            class="btn btn-info">Edit</a>                          
                         </td>
     <!-- ************************************** Put data into Classlist table rows ******************************************   -->
                     
-                        <td><center><?php echo $row['studentid']; ?></center></td>
+                        <td><?php echo $row['studentid']; ?></td>
                         <td><?php echo $row['name']." ".$row['pacomment'] ?></td>
                         
 
@@ -155,7 +170,9 @@ body {
     
                 </table> <!-- *************** End of Classlist Table  ******************************************   -->
 
-            </div> 
+            </div> <!-- ******* End  <div class="row justify-content-center">  **************************   -->
+
+    
    
         </div>
         </div>
