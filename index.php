@@ -54,7 +54,7 @@ body {
 </style>
 
 </head>
-<body style="background-color:powderblue;">>
+<body style="background-color:linen;">
 <div class="topnav">
   <a class="active" href="#home">Home</a>
   <a href="#news">News</a>
@@ -68,7 +68,7 @@ body {
 
     <!-- ************************************** Begin Connect DB  ************************************************ -->
     
-        <<div class="container" align-content-center>
+        <div class="container" align-content-center>
         <?php
             // $mysqli = new mysqli("localhost","ray","password","reports")or die(mysqli_error($mysqli));
             $result = $mysqli->query("SELECT * FROM data WHERE classroom = '101i'AND classtime = 'am'") or die($mysqli->error);
@@ -99,7 +99,7 @@ body {
                     while($rows = $resultcomment-> fetch_assoc())
                     {
                         $EnglishComment = $rows['EnglishComment'];
-                        echo "<option value='$name.$EnglishComment'>$name.$EnglishComment</option>";
+                        echo "<option value='$EnglishComment'>$name.$EnglishComment</option>";
                     }
                     ?></h2> 
                 </select><br>
